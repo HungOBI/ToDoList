@@ -31,7 +31,7 @@
         android:layout_marginLeft="30dp"
         android:hint="Title:"
         android:textSize="25dp"
-        android:maxLength="20"
+        android:maxLength="15"
         android:maxLines="1"
         android:background="#E4B0B0" />
     <EditText

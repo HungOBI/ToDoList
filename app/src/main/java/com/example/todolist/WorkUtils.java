@@ -1,8 +1,15 @@
 package com.example.todolist;
 
-import java.util.ArrayList;
+import android.widget.ArrayAdapter;
 
-public class WorkUtils {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class WorkUtils  {
     private ArrayList<Work> worksData;
 
     private static WorkUtils workUtils;
@@ -30,14 +37,6 @@ public class WorkUtils {
         }
         worksData.add(work);
     }
-    /*public void updateWork(int id,Work newWork){
-        Work oldWork=getWorkById(id);
-        if(oldWork!=null){
-            oldWork.setTitle(newWork.getTitle());
-            oldWork.setCreateDate(newWork.getCreateDate());
-        }
-
-    }*/
     public void deleteWork(int id){
         for(int i=0;i<worksData.size();i++){
             if(worksData.get(i).getId()==id) {
@@ -46,6 +45,7 @@ public class WorkUtils {
             }
         }
     }
+
     private Work getWorkById(int id) {
         for (Work work : worksData) {
             if (work.getId() == id) {

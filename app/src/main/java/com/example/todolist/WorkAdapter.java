@@ -2,7 +2,9 @@ package com.example.todolist;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.media.Image;
+import android.opengl.Visibility;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,9 +76,14 @@ public class WorkAdapter extends RecyclerView.Adapter<WorkAdapter.ViewHolder> {
             imvDelete=itemView.findViewById(R.id.img_delete);
         }
 
-        private void bindView(Work work){
+        public void bindView(Work work){
             this.work=work;
-            imgWork.setImageBitmap(work.getImgWork());
+            if(imgWork.getVisibility()==View.GONE){
+                imgWork.setVisibility(View.GONE);
+            }else {
+                imgWork.setVisibility(View.VISIBLE);
+                imgWork.setImageBitmap(work.getImgWork());
+            }
             tvTitle.setText(work.getTitle());
             tvDecription.setText(work.getDescription());
             tvCreateDate.setText(work.getCreateDate());

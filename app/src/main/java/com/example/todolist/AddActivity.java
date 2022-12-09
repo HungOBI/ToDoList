@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.app.DirectAction;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -35,6 +36,7 @@ public class AddActivity extends AppCompatActivity {
     ImageView img_Work;
     final int REQUEST_CODE_CAMERA=1;
     final int REQUEST_CODE_GALLERY = 2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,10 +66,9 @@ public class AddActivity extends AppCompatActivity {
         bt_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 String title= ed_title.getText().toString();
                 String description=ed_description.getText().toString();
-                
+                Bitmap imgWork=((BitmapDrawable)img_Work.getDrawable()).getBitmap();
                 if(title.isEmpty()){
                     Toast.makeText(AddActivity.this,"Please enter a title",Toast.LENGTH_SHORT).show();
                     return;
@@ -76,8 +77,8 @@ public class AddActivity extends AppCompatActivity {
                     return;
                 }else {
                     SimpleDateFormat dateFormat=new SimpleDateFormat("dd/MM/yyyy");
-                    Toast.makeText(AddActivity.this,"add work success",Toast.LENGTH_SHORT).show();
-                    Work work=new Work(img,dateFormat.format(new Date()),title,description);
+                    Toast.makeText(AddActivity.this,"Add work success",Toast.LENGTH_SHORT).show();
+                    Work work=new Work(imgWork,dateFormat.format(new Date()),title,description);
                     WorkUtils.getInstance().addWork(work);
                 }
                 finish();

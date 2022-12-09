@@ -7,20 +7,9 @@
     android:background="#F4AFAF"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tv_worklist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/acme"
-        android:text="WORK LIST"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv"
-        android:layout_below="@+id/tv_worklist"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

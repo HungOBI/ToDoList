@@ -66,11 +66,13 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/image_view_work"
                 android:layout_marginLeft="5dp"
+                app:layout_constraintRight_toLeftOf="@+id/img_delete"
+                android:layout_marginRight="10dp"
                 android:id="@+id/tv_description"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:maxWidth="250dp"
-                android:maxLines="1"
+                android:maxLines="3"
                 android:textSize="15dp"
                 tools:text="Description: Doctor"/>
             <ImageView

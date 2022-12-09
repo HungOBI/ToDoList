@@ -2,18 +2,23 @@ package com.example.todolist;
 
 import android.graphics.Bitmap;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Work {
     private int id;
     private String createDate;
     private String title;
     private String description;
     private Bitmap imgWork;
-    public Work(Bitmap imgWork,String createDate, String title, String description) {
+    public Work(Bitmap imgWork, String createDate, String title, String description) {
         this.createDate = createDate;
         this.title = title;
         this.description = description;
         this.imgWork=imgWork;
     }
+
 
     public Bitmap getImgWork() {
         return imgWork;
